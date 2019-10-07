@@ -1,0 +1,11 @@
+<h1>Cat Café Staff</h1>
+
+<ul>
+<% @servers.each do |server|%>
+<li>
+<%= link_to server.name, server_path(server) %>
+</li>
+<%end %>
+</ul>
+
+<%= button_to "Hire New Cat Server", new_server_path, method: :get%>

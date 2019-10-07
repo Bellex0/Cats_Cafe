@@ -1,0 +1,13 @@
+<h1>Edit profile</h1>
+
+<%= form_for @server do |f| %>
+
+<%=f.label :name %>
+<%=f.text_field :name %>
+
+<%=f.label :cat_id %>
+<%=f.collection_select :cat_id, Cat.all, :id, :name %>
+
+<%=f.submit%>
+  
+<% end %>

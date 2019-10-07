@@ -1,0 +1,17 @@
+<h1> <%=@cat.name %>'s Profile </h1>
+
+<h4>Breed: <%=@cat.breed %> </h4> 
+<h4>Age: <%=@cat.age %> </h4> <br>
+
+<h3> <%=@cat.name %>'s Staff </h3>
+
+<ul>
+<% @servers.each do |server| %>
+<li>
+<%= link_to server.name, server_path(server)%>
+</li>
+<%end %>
+</ul>
+
+
+<%= link_to 'Edit profile', edit_cat_path(@cat) %>
