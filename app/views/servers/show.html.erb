@@ -2,7 +2,10 @@
 
 <h2>Current Cat Client</h2>
 
-<%= link_to @cats.name, cat_path(@cats) %><br><br>
+ 
+<%= link_to @cats.name, cat_path(@cats) %>
+
+<br><br>
 
 <%= button_to "Edit #{@server.name}'s Profile", edit_server_path, method: :get %><br><br>
 <%= button_to "Fire #{@server.name}", server_path(@server), method: :delete %>

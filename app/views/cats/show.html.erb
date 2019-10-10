@@ -14,4 +14,6 @@
 </ul>
 
 
-<%= link_to 'Edit profile', edit_cat_path(@cat) %>
+<%= button_to 'Edit profile', edit_cat_path(@cat), method: :get %>
+<%= button_to 'Delete profile', cat_path(@cat), method: :delete %>
+

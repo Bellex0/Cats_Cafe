@@ -2,7 +2,6 @@ class CatsController < ApplicationController
 
     def index
         @cats = Cat.all
-        # @cat = Cat.find(params[:id])
     end 
 
     def show 
@@ -12,8 +11,12 @@ class CatsController < ApplicationController
 
     def new 
         @cat = Cat.new
-        redirect_to new_cat_path
     end 
+
+    def create 
+        @cat = Cat.create(params.require(:cat).permit(:name, :breed, :age))
+        redirect_to cat_path(@cat)
+    end
 
     def edit 
         @cat = Cat.find(params[:id])
@@ -26,9 +29,13 @@ class CatsController < ApplicationController
         redirect_to cat_path(@cat)
     end
 
-    # def create 
-    #     @cat = Cat.create(params.require(:cat).permit(:name, :breed, :age))
-    # end
+    def destroy 
+        @cat = Cat.find(params[:id])
+        @cat.destroy
+        redirect_to cats_path
+    end
+
+    
 
 
 
